@@ -2,8 +2,10 @@
 
 ## Voraussetungen
 
-Zur Verwendung unter Windows ist die Installation von MikTex notwendig: https://miktex.org/download
-Installation der Schriftart [Charis SIL](http://software.sil.org/charis/download/). Diese Schriftart ist auf gute Lesbarkeit optimiert. Also genau das richtige für eine Abschlussarbeit.
+1. Zur Verwendung unter Windows ist die Installation von MikTex notwendig: https://miktex.org/download
+2. Installation der Schriftart [Charis SIL](http://software.sil.org/charis/download/). Diese Schriftart ist auf gute Lesbarkeit optimiert. Also genau das richtige für eine Abschlussarbeit.
+3. Zur Verwaltung der Literaturangaben bietet sich JabRef an: http://www.jabref.org/
+
 
 ## Einrichtung & Verwendung
 
