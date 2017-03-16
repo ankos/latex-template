@@ -1,4 +1,9 @@
+# The command /* blacklists everything
+/*
+
+# This section actually whitelists the few items we want to keep
 !.gitignore
+!README.md
 !figures/
-!*.tex
-!*.bib
+!**.tex
+!**.bib
