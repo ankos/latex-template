@@ -1,0 +1,174 @@
+\documentclass[a4paper, 12pt, headsepline=true]{scrartcl} % headsepline ist für die Linie unter der Kopfzeile verantwortlich
+
+\usepackage{polyglossia}
+\setdefaultlanguage[spelling=new]{german}
+
+\usepackage[automark]{scrlayer-scrpage}
+\clearpairofpagestyles
+\ihead{\headmark}
+\ohead{\pagemark}
+
+\pagestyle{scrheadings}
+\setkomafont{pageheadfoot}{\small}
+
+\usepackage[onehalfspacing]{setspace}
+\setmainfont{Charis SIL} % set the main body font (\textrm), assumes Charis SIL is installed
+
+
+\usepackage{csquotes}
+\usepackage[style=authoryear,sorting=ynt]{biblatex}
+\addbibresource{lit.bib}
+
+\usepackage{enumitem}
+\renewcommand{\labelitemiii}{$\star$}
+\usepackage{tabularx} %bessere Tabellenumgebung mit variablen Spaltenbreiten und definierbarer fester Tabellenbreite z.B. \textwidth
+
+\usepackage[export]{adjustbox}
+
+\usepackage[printonlyused, withpage]{acronym}
+
+\usepackage[
+german,
+colorlinks=true,
+linkcolor=blue, % einfache interne Verknüpfungen
+anchorcolor=black,% Ankertext
+citecolor=green, % Verweise auf Literaturverzeichniseinträge im Text
+urlcolor=cyan % Farbe der URLs
+ % Back-Links zu den Kapiteln
+]{hyperref}
+
+\usepackage{graphicx}
+\usepackage{wrapfig}
+
+% Umbenennung der Caption Beschreibung unter Bildern von "Abbildung" in "Abb." um Platz zu sparen.
+\addto\captionsgerman{%
+	\renewcommand{\figurename}{Abb.}%
+}
+
+% Definiere eine neue Liste bei der die Unterpunkte auch nummeriert sind, wie bei einem Inhaltsverzeichnis.
+\newlist{legal}{enumerate}{10}
+\setlist[legal]{label*=\arabic*.}
+
+
+\begin{document}
+
+
+\begin{titlepage}
+	\begin{figure}
+		\includegraphics[width=0.5\textwidth,right]{figures/hska-logo}
+		\vspace{3cm}
+	\end{figure}
+
+
+	{\scshape\huge\bfseries Praxisbericht\par}
+
+	\vspace{2cm}
+	
+	
+	\renewcommand{\arraystretch}{1.5}
+	\begin{tabularx}{\columnwidth}{XX}
+		\textbf{Matrikelnummer:} 		& \textbf{100100100}\\
+		Name: 							& Logi Logik\\
+		Firma:							& Läuft mit Latex GmbH \\
+		Zeitraum:						& 01.03.2016 - 31.08.2016 \\
+		Datum:							& 04.11.2016 
+	\end{tabularx}
+\end{titlepage}
+
+\newpage
+
+% Nötig um in der PDF Datei einen Lesezeicheneintrag für das Inhaltsverzeichnis zu bekommen.
+\pdfbookmark[1]{Inhaltsverzeichnis}{toc}
+\tableofcontents
+\newpage
+
+\addcontentsline{toc}{section}{Abkürzungsverzeichnis}
+% Angabe in eckigen Klammern sollte das längste Acronym enthalten.
+% Das ist notwendig damit sich der Einschub am längsten Acronym orientiert.
+\begin{acronym}[KISS]
+	\acro{kiss}[KISS]{Keep it simple stupid}
+	
+\end{acronym}
+
+\clearpage
+
+\addcontentsline{toc}{section}{Abbildungsverzeichnis}
+\listoffigures
+\clearpage
+
+
+\section{Einleitung}
+
+Ein Beispiel die Verwendung von Acronymen, \ac{kiss}. Ist auch ganz interessant bei der zweiten Verwendung: \ac{kiss}.
+
+\subsection{Unternehmensbeschreibung}
+
+\subsection{Zielsetzung \& erwartete Ergebnisse}
+
+\subsection{Strategie der Zielerreichung}
+
+\subsection{Gang der Arbeit}
+
+\section{Vorläufige Gliederung}
+
+Ein Beispiel für die vorläufige Gliederung im Exposé.
+
+\begin{legal}
+	\item Einleitung \hfill 1
+	\begin{legal}
+		\item Zielsetzung \dotfill 2
+		\item Methodik der Arbeit \dotfill 2
+		\item Erwartete Ergebnisse \dotfill 3
+		\item Erläuterung zum Aufbau \dotfill 3
+	\end{legal}
+	
+	
+	\item Unternehmen \hfill 4
+	\begin{legal}
+		\item Vorstellung der Läuft Gmbh \dotfill 4
+		\item Zweitens \dotfill 4
+		\item Drittens \dotfill 5
+	\end{legal}
+	
+	
+	\item Anforderungen an ein modernes Reportingsystem \hfill 7
+	\begin{legal}
+		\item Reporting im Unternehmensumfeld \dotfill 7
+		\item Evaluierung der Verfügbarkeit von Daten  \dotfill 8
+		\item Visualisierung im Kontext mobiler Systeme \dotfill 9
+		\item Abgrenzung der Arbeit \dotfill 10
+	\end{legal}
+	
+	
+	\item Technologieauswahl für ein echtzeitfähiges System  \hfill 11
+	\begin{legal}
+		\item Definition von Echtzeit \dotfill 11
+		\item Vorstellung möglicher technologischer Plattformen  \dotfill 12
+		\begin{legal}
+			\item P1 \dotfill 12
+			\item P2 \dotfill 14
+			\item P3 \dotfill 16
+		\end{legal}
+		\item Erarbeitung von Entscheidungskriterien \dotfill 18
+		\item Evaluierung der Plattformen anhand der Entscheidungskriterien \dotfill 20
+		\item Entscheidung \dotfill 23
+		
+	\end{legal}
+\end{legal}
+
+
+
+
+\section{Hauptteil}
+\section{Fazit}
+
+
+
+
+
+
+
+
+\printbibliography[heading=bibintoc]
+
+\end{document}
